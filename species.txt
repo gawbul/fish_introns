@@ -1,0 +1,45 @@
+Common Name	Scientific Name
+Amazon molly	Poecilia formosa
+Asian bonytongue	Scleropages formosus
+Ballan wrasse	Labrus bergylta
+Bicolor damselfish	Stegastes partitus
+Burton's mouthbrooder	Haplochromis burtoni
+Channel catfish	Ictalurus punctatus
+Climbing perch	Anabas testudineus
+Clown anemonefish	Amphiprion ocellaris
+Cod	Gadus morhua
+Coelacanth	Latimeria chalumnae
+Fugu	Takifugu rubripes
+Greater amberjack	Seriola dumerili
+Guppy	Poecilia reticulata
+Hagfish	Eptatretus burgeri
+Indian medaka	Oryzias melastigma
+Japanese medaka	Oryzias latipes
+Lyretail cichlid	Neolamprologus brichardi
+Makobe Island cichlid	Pundamilia nyererei
+Mangrove rivulus	Kryptolebias marmoratus
+Mexican tetra	Astyanax mexicanus
+Midas cichlid	Amphilophus citrinellus
+Monterrey platyfish	Xiphophorus couchianus
+Mummichog	Fundulus heteroclitus
+Northern pike	Esox lucius
+Ocean sunfish	Mola mola
+Orange clownfish	Amphiprion percula
+P. kingsleyae	Paramormyrops kingsleyae
+P. magnuspinnatus	Periophthalmus magnuspinnatus
+Platyfish	Xiphophorus maculatus
+Red-bellied piranha	Pygocentrus nattereri
+Sailfin molly	Poecilia latipinna
+Sheepshead minnow	Cyprinodon variegatus
+Shortfin molly	Poecilia mexicana
+Spiny chromis	Acanthochromis polyacanthus
+Spotted gar	Lepisosteus oculatus
+Stickleback	Gasterosteus aculeatus
+Tetraodon	Tetraodon nigroviridis
+Tilapia	Oreochromis niloticus
+Tongue sole	Cynoglossus semilaevis
+Turbot	Scophthalmus maximus
+Western mosquitofish	Gambusia affinis
+Yellowtail amberjack	Seriola lalandi dorsalis
+Zebra mbuna	Maylandia zebra
+Zebrafish	Danio rerio

@@ -18,3 +18,6 @@ uninstall-poetry:
 
 nf-get-introns:
 	nextflow run get_introns.nf
+
+nf-get-genes:
+	nextflow run get_genes.nf

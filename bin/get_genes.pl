@@ -16,7 +16,7 @@ if ($num_args != 2) {
 	die("Require input species name and output directory as parameters.")	
 }
 
-# set species from input variable
+# set species and output directory from input parameters
 my @args = @ARGV;
 my $species = $args[0];
 my $output_dir = $args[1];
@@ -24,7 +24,7 @@ chomp($species);
 chomp($output_dir);
 
 # check if a csv file exists already
-my $output_filename = "${output_dir}/${species}_introns_" . ENSEMBL_RELEASE . ".csv";
+my $output_filename = "${output_dir}/${species}_genes_" . ENSEMBL_RELEASE . ".csv";
 if (-e $output_filename) {
 	warn("Species csv file already exists for ${species}.");
 	exit;
@@ -50,7 +50,7 @@ my $gene_adaptor = $registry->get_adaptor( $species, 'Core', 'Gene');
 print("Creating output file...\n");
 my $csv = Text::CSV->new({binary => 1, eol => $/}) or die "Failed to create a CSV handle: $!";
 open my $fh, ">:encoding(utf8)", $output_filename or die "Failed to create $output_filename: $!";
-my @heading = ("Species", "GeneID", "TranscriptID", "Start", "End", "Length");
+my @heading = ("Species", "GeneID", "GeneStart", "GeneEnd", "GeneLength", "TranscriptID", "TranscriptStart", "TranscriptEnd", "TranscriptLength");
 $csv->print($fh, \@heading);
 
 # Get list of gene IDs
@@ -58,20 +58,21 @@ print("Retrieving protein coding genes for ${species}...\n");
 my @genes = @{$gene_adaptor->fetch_all_by_biotype('protein_coding')};
 
 # Iterate over genes
-print("Retrieving introns from canonical transcripts for ${species}...\n");
+print("Retrieving canonical transcripts for ${species}...\n");
 foreach my $gene (@genes) {
 	foreach my $transcript ($gene->canonical_transcript) {
-		foreach my $intron (@{$transcript->get_all_Introns()}) {
-			my @datarow = (
-				$species,
-				$gene->stable_id(),
-				$transcript->stable_id(),
-				$intron->start(),
-				$intron->end(),
-				$intron->length()
-			);
-			$csv->print($fh, \@datarow);
-		}
+		my @datarow = (
+			$species,
+			$gene->stable_id(),
+			$gene->start(),
+			$gene->end(),
+			$gene->length(),
+			$transcript->stable_id(),
+			$transcript->start(),
+			$transcript->end(),
+			$transcript->length()
+		);
+		$csv->print($fh, \@datarow);
 	}
 }
 close $fh or die "Failed to close $output_filename: $!";

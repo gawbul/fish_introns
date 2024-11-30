@@ -19,7 +19,7 @@ if ($num_args != 1) {
 	die("Require input csv file as parameter.");
 }
 
-# set species from input variable
+# set csv file from input variable
 my @args = @ARGV;
 my $csv_file = $args[0];
 chomp($csv_file);

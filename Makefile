@@ -7,6 +7,9 @@ install:
 format:
 	poetry run ruff format .
 
+nbstripout:
+	poetry run nbstripout notebooks/*.ipynb
+
 install-poetry:
 	curl -sSL https://install.python-poetry.org | python3 - --version=$(cat .poetry-version)
 
